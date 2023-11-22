@@ -1,0 +1,59 @@
+is_global = true
+build_property.TargetFramework = net7.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = courseWork
+build_property.ProjectDir = /Users/mikey/Desktop/Study/Final/C-CW1/HikeManagement/courseWork/
+
+[/Users/mikey/Desktop/Study/Final/C-CW1/HikeManagement/courseWork/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = courseWork.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/mikey/Desktop/Study/Final/C-CW1/HikeManagement/courseWork/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = courseWork.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/mikey/Desktop/Study/Final/C-CW1/HikeManagement/courseWork/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = courseWork.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[/Users/mikey/Desktop/Study/Final/C-CW1/HikeManagement/courseWork/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = courseWork.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/mikey/Desktop/Study/Final/C-CW1/HikeManagement/courseWork/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = courseWork.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+
+[/Users/mikey/Desktop/Study/Final/C-CW1/HikeManagement/courseWork/Views/AddUpdateHikeDetail.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = courseWork.Views.AddUpdateHikeDetail.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/AddUpdateHikeDetail.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/AddUpdateHikeDetail.xaml
+
+[/Users/mikey/Desktop/Study/Final/C-CW1/HikeManagement/courseWork/Views/HikeDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = courseWork.Views.HikeDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/HikeDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/HikeDetailPage.xaml
+
+[/Users/mikey/Desktop/Study/Final/C-CW1/HikeManagement/courseWork/Views/HikeListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = courseWork.Views.HikeListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/HikeListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/HikeListPage.xaml

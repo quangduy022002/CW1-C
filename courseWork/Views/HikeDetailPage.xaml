@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="courseWork.Views.HikeDetailPage"
+             Title="Detail Hike"
+            xmlns:vm="clr-namespace:courseWork.ViewModel"
+             x:DataType="vm:HikeDetailViewModel">
+    <ScrollView>
+        <StackLayout BackgroundColor="#F5F5F5" Padding="10">
+    <Grid Margin="5"
+          RowDefinitions="Auto, Auto"
+          ColumnDefinitions="Auto">
+        <!-- Data Grid -->
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              Margin="10,0"
+              RowDefinitions="Auto, Auto, Auto, Auto,Auto,Auto,Auto, Auto"
+              ColumnDefinitions="Auto, Auto">
+
+            <!-- Name -->
+            <Label LineBreakMode="WordWrap"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   HorizontalOptions="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontSize="22" FontAttributes="Bold" Text="Name" />
+                        <Span FontSize="20" Text=": " />
+                        <Span FontSize="20" FontAttributes="Italic" Text="{Binding HikeDetail.Title}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Location -->
+            <Label LineBreakMode="WordWrap"
+                   Grid.Column="0"
+                   Grid.Row="1"
+                   HorizontalOptions="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontSize="22" FontAttributes="Bold" Text="Location" />
+                        <Span FontSize="20" Text=": " />
+                        <Span FontSize="20" FontAttributes="Italic" Text="{Binding HikeDetail.Location}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Date -->
+            <Label LineBreakMode="WordWrap"
+                   Grid.Column="0"
+                   Grid.Row="2"
+                   HorizontalOptions="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontSize="22" FontAttributes="Bold" Text="Date" />
+                        <Span FontSize="20" Text=": " />
+                        <Span FontSize="20" FontAttributes="Italic" Text="{Binding HikeDetail.Date, StringFormat='{0:dd/MM/yyyy}'}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Length -->
+            <Label LineBreakMode="WordWrap"
+                   Grid.Column="0"
+                   Grid.Row="3"
+                   HorizontalOptions="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontSize="22" FontAttributes="Bold" Text="Length" />
+                        <Span FontSize="20" Text=": " />
+                        <Span FontSize="20" FontAttributes="Italic" Text="{Binding HikeDetail.Length}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Packing -->
+            <Label LineBreakMode="WordWrap"
+                   Grid.Column="0"
+                   Grid.Row="4"
+                   HorizontalOptions="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontSize="22" FontAttributes="Bold" Text="Packing" />
+                        <Span FontSize="20" Text=": " />
+                        <Span FontSize="20" FontAttributes="Italic" Text="{Binding HikeDetail.IsPacking}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Level -->
+            <Label LineBreakMode="WordWrap"
+                   Grid.Column="0"
+                   Grid.Row="5"
+                   HorizontalOptions="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontSize="22" FontAttributes="Bold" Text="Level" />
+                        <Span FontSize="20" Text=": " />
+                        <Span FontSize="20" FontAttributes="Italic" Text="{Binding HikeDetail.Level}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Description -->
+            <Label LineBreakMode="WordWrap"
+                   Grid.Column="0"
+                   Grid.Row="6"
+                   HorizontalOptions="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontSize="22" FontAttributes="Bold" Text="Description" />
+                        <Span FontSize="20" Text=": " />
+                        <Span FontSize="20" FontAttributes="Italic" Text="{Binding HikeDetail.Description}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+             <!-- Observation -->
+            <Label LineBreakMode="WordWrap"
+                   Grid.Column="0"
+                   Grid.Row="7"
+                   HorizontalOptions="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontSize="22" FontAttributes="Bold" Text="Observation" />
+                        <Span FontSize="20" Text=": " />
+                        <Span FontSize="20" FontAttributes="Italic" Text="Have a nice trip!!!!" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+    </Grid>
+</StackLayout>
+    </ScrollView>
+</ContentPage>

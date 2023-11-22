@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="courseWork.Views.AddUpdateHikeDetail"
+             Title="Update Hike Detail"
+             xmlns:vm="clr-namespace:courseWork.ViewModel"
+             x:DataType="vm:HikeViewModel">
+    <VerticalStackLayout Spacing="20" Margin="10" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Name of hiker" VerticalOptions="Center" FontSize="Subtitle" Margin="0,0,40,0" HorizontalOptions="Start"/>
+                    <Entry x:Name="txtName" Text="{Binding OperatingHike.Title}" HorizontalOptions="StartAndExpand" Placeholder="Enter Name of hiker" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Location" VerticalOptions="Center" Margin="0,0,80,0" FontSize="Subtitle" HorizontalOptions="Start"/>
+                    <Entry x:Name="txtLocation" Text="{Binding OperatingHike.Location}" HorizontalOptions="StartAndExpand" Placeholder="Enter location" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Date of the hike" VerticalOptions="Center" FontSize="Subtitle" Margin="0,0,30,0"/>
+                    <DatePicker x:Name="txtDateOfHike" Format="dd/MM/yyyy"  Date="{Binding OperatingHike.Date}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Packing availabe" VerticalOptions="Center" FontSize="Subtitle" Margin="0,0,20,0" HorizontalOptions="Start"/>
+                    <Switch x:Name="swtPacking" VerticalOptions="Center"></Switch>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Length the hike" VerticalOptions="Center" FontSize="Subtitle" Margin="0,0,30,0" HorizontalOptions="Start"/>
+                    <Entry x:Name="txtLengthHike" Text="{Binding OperatingHike.Length}" HorizontalOptions="StartAndExpand" Placeholder="Enter length" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Level of difficulty" VerticalOptions="Center" FontSize="Subtitle" Margin="0,0,20,0"/>
+                    <Picker x:Name="cbxDifficulty" 
+                        ItemsSource="{Binding DifficultyLevels}" 
+                        SelectedItem="{Binding OperatingHike.Level}" 
+                        Title="Please select" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Description" VerticalOptions="Center" FontSize="Subtitle" Margin="0,0,60,0" HorizontalOptions="Start"/>
+                    <Entry x:Name="txtDescription" Text="{Binding OperatingHike.Description}" HorizontalOptions="StartAndExpand" Placeholder="Enter description" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <Button x:Name="btnSubmit" Margin="0,30,0,0" Text="Save" HorizontalOptions="Center"
+                        Command="{Binding SaveHikeCommand}"
+                 >
+                    <Button.Triggers>
+                            <DataTrigger TargetType="Button" 
+                                         Binding="{Binding OperatingHike.Id}"
+                                         Value="0">
+                                <Setter Property="Text" Value="Save"/>
+                            </DataTrigger>
+                        </Button.Triggers>
+
+                </Button>
+            </VerticalStackLayout>
+     
+</ContentPage>

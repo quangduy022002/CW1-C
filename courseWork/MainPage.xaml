@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="courseWork.MainPage">
+
+
+        <!--<Grid RowDefinitions="Auto, *">
+            <Label Grid.Row="0" FontAttributes="Bold"  Text="Hike" FontSize="Title" HorizontalOptions="CenterAndExpand" Margin="0,30,0,0" />
+            <Grid Grid.Row="1" RowDefinitions="*, Auto">
+            <CollectionView Grid.Row="0" ItemsSource="{Binding Hikes}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="10"
+                                       Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                 <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Hike">
+                        <Grid RowDefinitions="Auto, Auto"
+                              ColumnDefinitions="*, Auto"
+                              RowSpacing="5"
+                              Padding="5"
+                              BackgroundColor="#ECECEC">
+                            <Label Grid.Row="0"
+                                   Grid.Column="0"
+                                   Text="{Binding Name}"
+                                   FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                                   Grid.Column="0"
+                                    Text="{Binding Location}"
+                                   FontAttributes="Bold" />
+                      
+                            <Button Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="Edit"
+                                    Padding="0"
+                                    HeightRequest="25"
+                                    FontSize="12"
+                                    CornerRadius="10"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:HikeViewModel}}, Path=SetOperatingHikeCommand}"
+                                    CommandParameter="{Binding .}"/>
+
+                            <Button Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="Del"
+                                    Padding="0"
+                                    HeightRequest="25"
+                                    FontSize="12"
+                                    CornerRadius="10"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:HikeViewModel}}, Path=DeleteHikeCommand}"
+                                    CommandParameter="{Binding Id}" />
+                        </Grid>
+                    </DataTemplate>
+                  </CollectionView.ItemTemplate>
+                  <CollectionView.EmptyView>
+                    <ContentView>
+                        <VerticalStackLayout HorizontalOptions="Center"
+                                             VerticalOptions="Center">
+                            <Label Text="No Hikes Found"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+                            <Label Text="Try creating a product from the form below"/>
+                        </VerticalStackLayout>
+                    </ContentView>
+                </CollectionView.EmptyView>
+                </CollectionView> 
+            </Grid>
+        </Grid>-->
+    
+</ContentPage>
+

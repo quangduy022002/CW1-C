@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="courseWork.Views.HikeListPage"
+             Title="HikeListPage"
+             xmlns:vm="clr-namespace:courseWork.ViewModel"
+             xmlns:models="clr-namespace:courseWork.Models"
+             xmlns:searchHandlers="clr-namespace:courseWork.SearchHandlers"
+             x:DataType="vm:HikeViewModel">
+     <Shell.SearchHandler>
+        <searchHandlers:HikeSearchHandler 
+            Placeholder="Search Hike"
+            ShowsResults="True"
+            QueryIcon="search"
+            ClearIcon="clear"
+            NavigationRoute="HikeDetailPage"
+            Hikes="{x:Static vm:HikeViewModel.HikesListForSearch}">
+            <searchHandlers:HikeSearchHandler.ItemTemplate>
+                <DataTemplate x:DataType="models:Hike">
+                    <Grid Margin="5,10,5,10" RowDefinitions="Auto" ColumnDefinitions="40,Auto">
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Location}" FontSize="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </searchHandlers:HikeSearchHandler.ItemTemplate>
+        </searchHandlers:HikeSearchHandler>
+    </Shell.SearchHandler>
+    <ScrollView>
+        <StackLayout>
+            <VerticalStackLayout
+                                 Margin="10"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center"
+                                 IsVisible="{Binding IsLoading}">
+                <ActivityIndicator IsRunning="True"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"/>
+                <Label Text="{Binding LoadingText}"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+           <StackLayout Margin="10">
+                <Image Margin="0,0,10,5" WidthRequest="40" HeightRequest="40" Grid.Row="0" Source="plus.png" HorizontalOptions="EndAndExpand" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Command="{Binding AddUpdateHikeCommand}"
+                                NumberOfTapsRequired="1"
+                            />
+                    </Image.GestureRecognizers>
+                </Image>
+                <CollectionView ItemsSource="{Binding Hikes}">
+                    <CollectionView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="10"
+                                               Orientation="Vertical"/>
+                        </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Hike">
+                            <SwipeView>
+           
+                                <Frame Margin="10" Padding="10">
+                                    <Grid Margin="5" RowDefinitions="50, Auto" ColumnDefinitions="50,220,100">
+                                            <Label Grid.Column="1" Grid.Row="0" Text="{Binding Location}" FontSize="20" FontAttributes="Bold" />
+                                         <Label LineBreakMode="WordWrap" Grid.Column="1" Grid.Row="1">
+                                             <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span FontSize="18" FontAttributes="Bold" Text="{Binding Length}" />
+                                                    <Span Text=" km"  />
+                                                </FormattedString>
+                                        </Label.FormattedText>
+                                         </Label>
+                                            <Image Margin="0,-20,0,0" WidthRequest="20" HeightRequest="40" Grid.Column="2" Grid.Row="0" Source="clear.png" >
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:HikeViewModel}}, Path=DeleteHikeCommand}"
+                                                            CommandParameter="{Binding Id}"
+                                                            NumberOfTapsRequired="1"
+                                                        />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                         <Image Margin="0,-20,0,0" WidthRequest="20" HeightRequest="40" Grid.Row="0" Source="edit.png" >
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:HikeViewModel}}, Path=MoveToEditPageCommand}"
+                                                            CommandParameter="{Binding .}"
+                                                            NumberOfTapsRequired="1"
+                                                        />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:HikeViewModel}},Path=MoveToDetailPageCommand}"
+                                                          CommandParameter="{Binding .}" />
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </SwipeView>
+       
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                     <CollectionView.EmptyView>
+                            <ContentView>
+                                <VerticalStackLayout HorizontalOptions="Center"
+                                                     VerticalOptions="Center">
+                                    <Label Text="No Hike Found"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center"/>
+                                </VerticalStackLayout>
+                            </ContentView>
+                        </CollectionView.EmptyView>
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
